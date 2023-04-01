@@ -20,7 +20,7 @@ def main():
     photos_number = int(input('Введите количество фотографий:\n'))
     album = input('Введите альбом:\n')
     vk = VkParser(vk_token, id)
-    response = vk.get_user_photos(photos_number, album)
+    response = vk.get_user_photos(album, photos_number)
     if vk_check(response):
         yandex = YandexParser(yandex_token)
         yandex_result = yandex.post_photos(response)
